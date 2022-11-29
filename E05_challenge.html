@@ -1,0 +1,21 @@
+<script>
+    //Problema
+    /*
+    Considere que um investidor pretende deixar seu dinheiro guardado durante um determinado período. Ele sabe o rendimento, que atualmente é de 1% ao mês, acrescerá 0,25% a cada ano que o dinheiro ficar investido.
+    Peça para o usuário informar a quantia inicial investida e quanto tempo pretende deixar guardado.
+    Apresente o valor final previsto que terá investido e a porcentagem que acresceu, comparado com a quantia inicial que foi investida.
+    */
+const investimentoInicial = Number(prompt("Informe o investimento incial"))
+const tempo = parseInt(prompt("Informe quantos meses deseja investir"))
+let valor = investimentoInicial;
+let rendimento = 1;
+
+for(let meses = 1; meses <= tempo; meses++){
+valor = valor * rendimento
+if(meses % 12 === 0){
+    rendimento+= 0.25
+}
+}
+let porcentagem = ((valor / investimentoInicial) - 1) * 100;
+document.write(`Depois deste periodo, o total do investimento é de R$${valor.toFixed(2)}<br>`)
+</script>
